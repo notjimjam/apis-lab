@@ -4,12 +4,12 @@ console.log('hello world')
 
 const residentsBtn = document.querySelector('#residents')
 
-// const baseURL = 'https://swapi.dev/api'
+const baseURL = 'https://swapi.dev/api'
 
 function getResidents (event) {
     event.preventDefault()
 
-    axios.get('https://swapi.dev/api/planets/2')
+    axios.get(`${baseURL}/planets/2`)
         .then(res => {
           for(let i = 0; i < res.data.residents.length; i++) {
             axios.get(`${res.data.residents[i]}`)
