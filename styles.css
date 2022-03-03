@@ -1,6 +1,7 @@
 body {
     background-image: url('https://earth.stanford.edu/sites/default/files/styles/responsive_large/public/media/image/2019-12/starwars_gettyimages-510216640.jpg?itok=ELiwTvwa');
     background-size: cover;
+    background-repeat: no-repeat;
     margin: 50px;
     display: flex;
     flex-direction: column;

@@ -9,10 +9,11 @@ const baseURL = 'https://swapi.dev/api'
 function getResidents (event) {
     event.preventDefault()
 
-    axios.get(`${baseURL}/planets/2`)
+    axios.get(`${baseURL}/planets/?search=alderaan`)
         .then(res => {
-          for(let i = 0; i < res.data.residents.length; i++) {
-            axios.get(`${res.data.residents[i]}`)
+          let resArr = res.data.results[0].residents
+          for(let i = 0; i < resArr.length; i++) {
+            axios.get(resArr[i])
             .then(res => {
                 const header = document.createElement('h2')
                 header.textContent = res.data.name
@@ -28,4 +29,6 @@ function getResidents (event) {
 }
 
 residentsBtn.addEventListener('click', getResidents)
+
+
 
